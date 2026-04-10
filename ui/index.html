@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Wallet UI</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="walletUI">
+        <div class="overlay"></div>
+        <div class="main">
+            <button id="closeBtn" class="close-btn">&times;</button>
+            <div class="wallet-header">Mein Wallet</div>
+            
+            <!-- Hauptinformationen -->
+            <div class="wallet-row">
+                <span class="wallet-label">Name</span>
+                <span id="name" class="wallet-value">-</span>
+            </div>
+            <div class="wallet-row">
+                <span class="wallet-label">Geburtsdatum</span>
+                <span id="birthdate" class="wallet-value">-</span>
+            </div>
+            <div class="wallet-row">
+                <span class="wallet-label">Einreisedatum</span>
+                <span id="joindate" class="wallet-value">-</span>
+            </div>
+            <div class="wallet-row">
+                <span class="wallet-label">Größe</span>
+                <span id="height" class="wallet-value">-</span>
+            </div>
+            <div class="wallet-row">
+                <span class="wallet-label">Citizen ID</span>
+                <span id="citizenid" class="wallet-value">-</span>
+            </div>
+            
+            <!-- Status Bars -->
+            <div class="bar-row">
+                <span class="bar-label">Hunger</span>
+                <div class="bar-outer">
+                    <div id="hungerBar" class="bar-inner bar-hunger" style="width: 0%"></div>
+                </div>
+            </div>
+            <div class="bar-row">
+                <span class="bar-label">Durst</span>
+                <div class="bar-outer">
+                    <div id="thirstBar" class="bar-inner bar-thirst" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <!-- Tabs -->
+            <div class="wallet-tabs">
+                <button id="tab-licenses" class="wallet-tab active">Lizenzen & Dokumente</button>
+                <button id="tab-carkeys" class="wallet-tab">Fahrzeugschlüssel</button>
+            </div>
+            
+            <!-- Tab Inhalte -->
+            <div id="tabContent-licenses" class="wallet-tab-content active">
+                <div id="licensesList" class="licenses-list"></div>
+            </div>
+            <div id="tabContent-carkeys" class="wallet-tab-content">
+                <div id="carkeysList" class="carkeys-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay für Lizenzanzeige -->
+    <div id="overlay-license">
+        <div class="overlay-content">
+            <button class="close-btn" onclick="hideOverlay()">&times;</button>
+            <div id="overlayLicenseTitle" class="overlay-title"></div>
+            <div id="overlayLicenseLabel" class="overlay-label"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 
